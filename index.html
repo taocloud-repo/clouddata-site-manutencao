@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site em Manutenção</title>
+    <title>CloudData - Site em Manutenção</title>
     <style>
         * {
             margin: 0;
@@ -12,102 +12,207 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 50%, #003d7a 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito de nuvens animadas no fundo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+            padding: 60px 50px;
             text-align: center;
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
-            animation: fadeIn 0.8s ease-in;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .logo {
-            max-width: 200px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .icon {
-            font-size: 80px;
+        .icon-container {
             margin-bottom: 30px;
-            animation: rotate 2s linear infinite;
         }
 
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        .cloud-icon {
+            font-size: 90px;
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         h1 {
-            color: #333;
-            font-size: 2.5em;
+            color: #1a1a1a;
+            font-size: 2.8em;
             margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #0066cc;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
 
         p {
-            color: #666;
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            color: #555;
+            font-size: 1.15em;
+            line-height: 1.7;
+            margin-bottom: 35px;
         }
 
-        .info {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            color: #555;
+        .info-box {
+            background: linear-gradient(135deg, #f8f9fc 0%, #e8eef7 100%);
+            border-left: 4px solid #0066cc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .contact-email {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: #0052a3;
+            text-decoration: underline;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .phone-numbers {
+            margin-top: 15px;
+            color: #333;
             font-size: 0.95em;
         }
 
-        @media (max-width: 600px) {
+        .phone-numbers a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .phone-numbers a:hover {
+            text-decoration: underline;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ffa500;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
             .container {
                 padding: 40px 30px;
             }
 
-            .logo {
-                max-width: 150px;
-            }
-
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
 
-            p {
+            .subtitle {
                 font-size: 1.1em;
             }
 
-            .icon {
+            p {
+                font-size: 1em;
+            }
+
+            .cloud-icon {
+                font-size: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .cloud-icon {
                 font-size: 60px;
             }
         }
@@ -115,17 +220,39 @@
 </head>
 <body>
     <div class="container">
-        <img src="data:image/png;base64,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" alt="CloudData Logo" class="logo">
-        <div class="icon">⚙️</div>
+        <div class="icon-container">
+            <div class="cloud-icon">☁️</div>
+        </div>
+        
         <h1>Site em Manutenção</h1>
+        
+        <p class="subtitle">
+            <span class="status-indicator"></span>
+            Melhorias em andamento
+        </p>
+        
         <p>
-            Estamos trabalhando para melhorar sua experiência.<br>
+            Estamos atualizando nossa plataforma para oferecer<br>
+            uma experiência ainda melhor para você.<br>
             Em breve estaremos de volta!
         </p>
-        <div class="info">
-            Pedimos desculpas pelo inconveniente.<br>
-            Se precisar entrar em contato, envie um e-mail para: <strong>suporte@clouddata.com.vc</strong>
+        
+        <div class="info-box">
+            <p>
+                <strong>Precisa de suporte urgente?</strong><br><br>
+                📧 E-mail: <a href="mailto:suporte@clouddata.com.vc" class="contact-email">suporte@clouddata.com.vc</a>
+            </p>
+            <div class="phone-numbers">
+                📞 Telefones: <a href="tel:+551148054490">(11) 4805-4490</a> / <a href="tel:+551139958370">(11) 3995-8370</a>
+            </div>
+            <a href="https://clouddatacomvc.atlassian.net/servicedesk/customer/portal/1" target="_blank" class="contact-link">
+                🎫 Abrir Chamado no Service Desk
+            </a>
         </div>
+        
+        <p class="footer-text">
+            CloudData - Soluções em Tecnologia da Informação
+        </p>
     </div>
 </body>
 </html>
