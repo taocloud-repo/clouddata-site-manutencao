@@ -6,8 +6,8 @@
     <title>CloudData - Site em Manutenção</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/ico-clouddata-03.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="/ico-clouddata-03.ico">
+    <link rel="icon" type="image/x-icon" href="/ico-clouddata-02.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/ico-clouddata-02.ico">
     
     <style>
         * {
@@ -63,6 +63,26 @@
 
         .icon-container {
             margin-bottom: 30px;
+        }
+
+        .company-logo {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            animation: fadeInLogo 1s ease-in;
+        }
+
+        @keyframes fadeInLogo {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .cloud-icon {
@@ -187,6 +207,10 @@
                 padding: 40px 30px;
             }
 
+            .company-logo {
+                max-width: 200px;
+            }
+
             h1 {
                 font-size: 2.2em;
             }
@@ -209,6 +233,10 @@
                 padding: 35px 25px;
             }
 
+            .company-logo {
+                max-width: 150px;
+            }
+
             h1 {
                 font-size: 1.8em;
             }
@@ -226,7 +254,7 @@
 <body>
     <div class="container">
         <div class="icon-container">
-            <div class="cloud-icon">☁️</div>
+            <img src="/18 1.png" alt="CloudData Logo" class="company-logo">
         </div>
         
         <h1>Site em Manutenção</h1>
