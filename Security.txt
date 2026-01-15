@@ -1,0 +1,9 @@
+Contact: mailto:suporte@clouddata.com.vc
+Contact: tel:+551148054490
+Expires: 2027-01-15T23:59:59.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://www.clouddata.com.vc/.well-known/security.txt
+
+# CloudData - Soluções em Tecnologia da Informação
+# Empresa estabelecida desde 2011
+# CNAE: 6202-3/00 - Desenvolvimento e licenciamento de programas de computador customizáveis
