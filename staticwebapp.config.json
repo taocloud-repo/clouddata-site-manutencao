@@ -1,0 +1,108 @@
+{
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "geolocation=(), microphone=(), camera=()",
+    "Content-Security-Policy": "default-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; style-src 'self' 'unsafe-inline';"
+  },
+  "routes": [
+    {
+      "route": "/.well-known/security.txt",
+      "rewrite": "/security.txt"
+    },
+    {
+      "route": "/sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml"
+      }
+    },
+    {
+      "route": "/robots.txt",
+      "headers": {
+        "Content-Type": "text/plain"
+      }
+    },
+    {
+      "route": "/ico-clouddata-02.ico",
+      "headers": {
+        "Content-Type": "image/x-icon",
+        "Cache-Control": "public, max-age=86400"
+      }
+    },
+    {
+      "route": "/18 1.png",
+      "headers": {
+        "Content-Type": "image/png",
+        "Cache-Control": "public, max-age=86400"
+      }
+    },
+    {
+      "route": "/wp-admin/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/wp-content/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/wp-includes/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/wp-login.php",
+      "statusCode": 410
+    },
+    {
+      "route": "/xmlrpc.php",
+      "statusCode": 410
+    },
+    {
+      "route": "/*.php",
+      "statusCode": 410
+    },
+    {
+      "route": "/uploads/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/blog/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/categoria/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/category/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/author/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/tag/*",
+      "statusCode": 410
+    },
+    {
+      "route": "/",
+      "headers": {
+        "Cache-Control": "public, max-age=3600"
+      },
+      "statusCode": 200
+    },
+    {
+      "route": "/*",
+      "rewrite": "/index.html",
+      "headers": {
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+      },
+      "statusCode": 200
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  }
+}

@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /uploads/
+Disallow: /blog/
+Disallow: /categoria/
+Disallow: /category/
+Disallow: /author/
+Disallow: /tag/
+Disallow: /*.php$
 
 Sitemap: https://www.clouddata.com.vc/sitemap.xml
